@@ -13,6 +13,8 @@ return {
         local jdtls_path = home .. '/.local/share/nvim/mason/packages/jdtls'
 
         local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+        local extendedClientCapabilities = jdtls.extendedClientCapabilities
+
         local config = {
             cmd = {
                 'java',
@@ -25,6 +27,7 @@ return {
                 '--add-modules=ALL-SYSTEM',
                 '--add-opens', 'java.base/java.util=ALL-UNNAMED',
                 '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+                 '-javaagent:' .. home .. '/.local/share/nvim/mason/packages/lombok-nightly/lombok.jar',
                 '-jar', vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
                 '-configuration', '/path/to/jdtls/config_mac',
                 '-data', workspace_folder,
@@ -32,13 +35,33 @@ return {
             root_dir = root_dir,
             settings = {
                 java = {
-                    -- Configure Java settings here
-                }
+                    signatureHelp = { enabled = true },
+                    extendedClientCapabilities = extendedClientCapabilities,
+                    maven = {
+                        downloadSources = true,
+                    },
+                    referencesCodeLens = {
+                        enabled = true,
+                    },
+                    references = {
+                        includeDecompiledSources = true,
+                    },
+                    inlayHints = {
+                        parameterNames = {
+                            enabled = 'all', -- literals, all, none
+                        },
+                    },
+                    format = {
+                        enabled = false,
+                    },
+                },
             },
+
             init_options = {
                 bundles = {}
             },
         }
+
 
         -- Attach JDTLS for Java files
         vim.api.nvim_create_autocmd("FileType", {
