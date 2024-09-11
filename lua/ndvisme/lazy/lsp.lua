@@ -11,6 +11,7 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "nvim-java/nvim-java",
     },
 
     config = function()
@@ -22,6 +23,8 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+        require('java').setup()
+
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -29,6 +32,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "jdtls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -66,6 +70,11 @@ return {
                             }
                         }
                     }
+                end,
+                ["jdtls"] = function()
+                    require('lspconfig').jdtls.setup({
+                        capabilities = capabilities,
+                    })
                 end,
             }
         })
