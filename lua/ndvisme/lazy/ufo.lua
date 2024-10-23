@@ -10,8 +10,8 @@ return {
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
 
-		vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-		vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+		vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
+		vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
 
 		require('ufo').setup({
 			provider_selector = function (bufnr, filetype, buftype)
