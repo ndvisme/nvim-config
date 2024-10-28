@@ -15,6 +15,17 @@ return {
 	},
 
 	config = function()
+		require("lspconfig").gopls.setup({
+			capabilities = require('cmp_nvim_lsp').default_capabilities(),
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+				},
+			},
+		})
 		local cmp = require('cmp')
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
