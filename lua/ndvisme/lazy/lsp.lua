@@ -44,6 +44,7 @@ return {
 				"rust_analyzer",
 				"jdtls",
 				"gopls",
+				"pyright",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
