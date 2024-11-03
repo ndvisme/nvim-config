@@ -4,13 +4,13 @@ return {
     config = function()
         require('rose-pine').setup({
             -- Optional configuration
-            variant = 'auto', -- auto, main, moon, or dawn
+            variant = 'main', -- auto, main, moon, or dawn
             dark_variant = 'main',
-            -- styles = {
-            --     transparency = false,
-            --     italic = true,
-            --     bold = true
-            -- }
+            styles = {
+                transparency = false,
+                italic = true,
+                bold = true
+            }
         })
         -- Set colorscheme after options
         vim.cmd('colorscheme rose-pine')
