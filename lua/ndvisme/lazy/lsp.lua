@@ -67,7 +67,6 @@ return {
 					})
 					vim.g.zig_fmt_parse_errors = 0
 					vim.g.zig_fmt_autosave = 0
-
 				end,
 				["lua_ls"] = function()
 					local lspconfig = require("lspconfig")
@@ -75,10 +74,19 @@ return {
 						capabilities = capabilities,
 						settings = {
 							Lua = {
-								runtime = { version = "Lua 5.1" },
+								runtime = {
+									version = 'LuaJIT',
+								},
 								diagnostics = {
-									globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-								}
+									globals = { "vim", "it", "describe", "before_each", "after_each" },
+								},
+								workspace = {
+									library = vim.api.nvim_get_runtime_file("", true),
+									checkThirdParty = false,
+								},
+								telemetry = {
+									enable = false,
+								},
 							}
 						}
 					}
@@ -124,10 +132,10 @@ return {
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' }, -- For luasnip users.
-				 { name = 'vim-dadbod-completion' },
+				{ name = 'vim-dadbod-completion' },
 			}, {
-					{ name = 'buffer' },
-				})
+				{ name = 'buffer' },
+			})
 		})
 
 		vim.diagnostic.config({
