@@ -11,6 +11,7 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.clipboard = "unnamedplus"
 
 
 vim.api.nvim_create_autocmd("TextYankPost", {
