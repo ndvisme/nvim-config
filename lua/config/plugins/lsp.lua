@@ -12,7 +12,6 @@ return {
           },
         },
       },
-      "williamboman/mason-lspconfig.nvim",
     },
     config = function()
       -- Lua LSP setup
