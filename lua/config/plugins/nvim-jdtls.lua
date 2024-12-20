@@ -1,3 +1,3 @@
 return {
-  'mfussenegger/nvim-jdtls.git'
+  'mfussenegger/nvim-jdtls'
 }
