@@ -4,7 +4,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
-	"folke/lazydev.nvim",
+	"folke/lazydev.nvim", -- to propery config lua LS properties
 	ft = "lua", -- only load on lua files
 	opts = {
 	  library = {
