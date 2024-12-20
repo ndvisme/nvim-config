@@ -17,23 +17,6 @@ return {
     config = function()
       -- Lua LSP setup
       require("lspconfig").lua_ls.setup {}
-      -- JDTLS setup
-      require("lspconfig").jdtls.setup({
-        cmd = {'jdtls'},
-        root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
-        settings = {
-          java = {
-            configuration = {
-              runtimes = {
-                {
-                  name = "JavaSE-17",
-                  path = vim.fn.expand("$JAVA_HOME"),
-                }
-              }
-            }
-          }
-        },
-      })
     end,
   }
 }
