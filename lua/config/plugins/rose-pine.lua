@@ -1,3 +1,4 @@
+-- some nice colorts
 return { 
 	"rose-pine/neovim", 
 	name = "rose-pine",
