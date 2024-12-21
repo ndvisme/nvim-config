@@ -1,18 +1,11 @@
 {
-  "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
+  "lazy.nvim": { "branch": "main", "commit": "1159bdccd8910a0fd0914b24d6c3d186689023d9" },
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
-  "lua-async-await": { "branch": "main", "commit": "652d94df34e97abe2d4a689edbc4270e7ead1a98" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "2daa8921b7afdcfa47419a21ea343c3df6d74fa0" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "mini.nvim": { "branch": "main", "commit": "4228f166ee9db3e910eea1915e2d3683028add47" },
-  "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
-  "nvim-dap": { "branch": "master", "commit": "a6070b4e9e9a8ff1bc513c3748eff27080b0f44a" },
-  "nvim-java": { "branch": "main", "commit": "a36f50c82f922f352d4ce7ac6a3c6b238b3e0a36" },
-  "nvim-java-core": { "branch": "main", "commit": "5b03dca22fee76524a89e1c2dc1d73a9f0b1a3bb" },
-  "nvim-java-dap": { "branch": "main", "commit": "55f239532f7a3789d21ea68d1e795abc77484974" },
-  "nvim-java-refactor": { "branch": "main", "commit": "ea1420fed5463c9cc976c2b4175f434b3646f0f7" },
-  "nvim-java-test": { "branch": "main", "commit": "7f0f40e9c5b7eab5096d8bec6ac04251c6e81468" },
+  "nvim-jdtls": { "branch": "master", "commit": "ece818f909c6414cbad4e1fb240d87e003e10fda" },
   "nvim-lspconfig": { "branch": "master", "commit": "040001d85e9190a904d0e35ef5774633e14d8475" },
   "nvim-treesitter": { "branch": "master", "commit": "2405274937718d520a40e03df92030dca6b4f0fd" },
-  "rose-pine": { "branch": "main", "commit": "d396005db5bbd1d4ec7772a7c96c96f4c4802328" },
-  "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" }
+  "rose-pine": { "branch": "main", "commit": "d396005db5bbd1d4ec7772a7c96c96f4c4802328" }
 }
