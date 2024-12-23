@@ -1,7 +1,4 @@
-print("hello from init")
-
 require("config.lazy")
-
 
 -- These keymaps make development much more quicker
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
