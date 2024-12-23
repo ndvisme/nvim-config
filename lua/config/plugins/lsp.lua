@@ -21,7 +21,15 @@ return {
 					if not client then return end
 
 					vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format() end)
+
 					vim.keymap.set('n', '<space>gD', function() vim.lsp.buf.declaration() end)
+					vim.keymap.set('n', '<space>gd', function() vim.lsp.buf.definition() end)
+					vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end)
+					vim.keymap.set('n', '<space>gi', function() vim.lsp.buf.implementation() end)
+					vim.keymap.set('n', '<space>gr', function() vim.lsp.buf.references() end)
+
+					vim.keymap.set('n', '<space>rn', function() vim.lsp.buf.rename() end)
+					vim.keymap.set('n', '<space>ca', function() vim.lsp.buf.code_action() end)
 				end,
 			})
 		end,
