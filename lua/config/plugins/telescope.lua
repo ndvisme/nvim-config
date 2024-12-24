@@ -10,11 +10,7 @@ return {
 	},
 	config = function()
 		require('telescope').setup {
-			pickers = {
-				find_files = { theme = "ivy", },
-				help_tags = { theme = "ivy", },
-				live_grep = { theme = "ivy", },
-			}
+			defaults = require('telescope.themes').get_ivy()
 		}
 
 		pcall(require('telescope').load_extension, 'fzf') -- this makes the search faster!
