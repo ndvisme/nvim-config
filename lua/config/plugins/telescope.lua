@@ -12,7 +12,7 @@ return { {
 			require('telescope.builtin').find_files {
 				cwd = vim.fn.stdpath('config')
 			}
-		end)
+		end, { desc = 'its conviniet to be able to edit config where ever and whenever' })
 	end,
 }
 }
