@@ -15,9 +15,9 @@ return {
 
 		pcall(require('telescope').load_extension, 'fzf') -- this makes the search faster!
 
+		vim.keymap.set('n', '<space>gc', require('telescope.builtin').git_commits)
 		vim.keymap.set('n', '<space>fh', require('telescope.builtin').help_tags, { desc = 'get nvim cmds help' })
-		vim.keymap.set('n', '<space>fm', require('telescope.builtin').man_pages,
-			{ desc = 'see help for different cmnds of apps' })
+		vim.keymap.set('n', '<space>fm', require('telescope.builtin').man_pages, { desc = 'see cmnds help of apps' })
 		vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
 		vim.keymap.set('n', '<space>fg', require('telescope.builtin').live_grep)
 
