@@ -14,8 +14,6 @@ return function(client, bufnr)
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single", color = "red" })
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
-	-- this needs to move to the lsp.lua file in the future?
-  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, extend(opts, { desc = "Open diagnostic on current line" }))
   vim.keymap.set('n', '[d', vim.diagnostic.goto_next, extend(opts, { desc = "Jump to next diagnostic" }))
   vim.keymap.set('n', ']d', vim.diagnostic.goto_prev, extend(opts, { desc = "Jump to previous diagnostic" }))
 
