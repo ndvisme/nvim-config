@@ -10,11 +10,13 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>", { desc = "to make nav and display more convinient" })
+vim.keymap.set("n", "[q", "<cmd>cprev<CR>", { desc = "to make nav and display more convinient" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "high light when yanking text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function ()
+	callback = function()
 		vim.highlight.on_yank()
 	end,
 })
