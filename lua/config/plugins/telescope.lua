@@ -10,7 +10,10 @@ return {
 	},
 	config = function()
 		require('telescope').setup {
-			defaults = require('telescope.themes').get_ivy()
+			defaults = {
+				require('telescope.themes').get_ivy(),
+				path_display = {"shorten"}
+			},
 		}
 
 		pcall(require('telescope').load_extension, 'fzf') -- this makes the search faster!
