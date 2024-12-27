@@ -9,25 +9,23 @@ return {
 		}
 	},
 	config = function()
-		require('telescope').setup {
-			defaults = {
-				require('telescope.themes').get_ivy(),
-				path_display = {"shorten"}
-			},
-		}
+		require('telescope').setup({
+			defaults = require('telescope.themes').get_ivy(),
+		})
 
-		pcall(require('telescope').load_extension, 'fzf') -- this makes the search faster!
+		pcall(require('telescope').load_extension, 'fzf')     -- this makes the search faster!
 
-		vim.keymap.set('n', '<space>gc', require('telescope.builtin').git_commits)
-		vim.keymap.set('n', '<space>fh', require('telescope.builtin').help_tags, { desc = 'get nvim cmds help' })
-		vim.keymap.set('n', '<space>fm', require('telescope.builtin').man_pages, { desc = 'see cmnds help of apps' })
-		vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
-		vim.keymap.set('n', '<space>fg', require('telescope.builtin').live_grep)
+		local builtin = require('telescope.builtin')
+		vim.keymap.set('n', '<space>gc', builtin.git_commits)
+		vim.keymap.set('n', '<space>fh', builtin.help_tags, { desc = 'get nvim cmds help' })
+		vim.keymap.set('n', '<space>fm', builtin.man_pages, { desc = 'see cmnds help of apps' })
+		vim.keymap.set('n', '<space>fd', builtin.find_files)
+		vim.keymap.set('n', '<space>fg', builtin.live_grep)
 
 		vim.keymap.set('n', '<space>en', function()
-			require('telescope.builtin').find_files {
+			builtin.find_files({
 				cwd = vim.fn.stdpath('config')
-			}
-		end, { desc = 'its conviniet to be able to edit config where ever and whenever' })
+			})
+		end, { desc = 'its convinient to be able to edit config where ever and whenever' })
 	end
 }
