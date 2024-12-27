@@ -20,6 +20,7 @@ return {
 		vim.keymap.set('n', '<space>fh', builtin.help_tags, { desc = 'get nvim cmds help' })
 		vim.keymap.set('n', '<space>fm', builtin.man_pages, { desc = 'see cmnds help of apps' })
 		vim.keymap.set('n', '<space>fd', builtin.find_files)
+		vim.keymap.set('n', '<space>fb', builtin.buffers)
 		vim.keymap.set('n', '<space>fg', builtin.live_grep)
 
 		vim.keymap.set('n', '<space>en', function()
