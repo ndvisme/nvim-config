@@ -13,6 +13,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", "]q", "<cmd>cnext<CR>", { desc = "to make nav and display more convinient" })
 vim.keymap.set("n", "[q", "<cmd>cprev<CR>", { desc = "to make nav and display more convinient" })
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "When I move the page, i like to be centered." })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "When I move the page, i like to be centered." })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "high light when yanking text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -20,4 +23,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
