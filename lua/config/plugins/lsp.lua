@@ -14,8 +14,8 @@ return {
 			},
 		},
 		config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup { capabilites = capabilities }
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
+			require("lspconfig").lua_ls.setup { capabilites = capabilities }
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
@@ -23,6 +23,12 @@ return {
 					if not client then return end
 
 					vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format() end)
+					vim.keymap.set('v', '<space>f', function()
+						vim.lsp.buf.format({
+							async = false,
+							timeout_ms = 500
+						})
+					end)
 
 					vim.keymap.set('n', '<space>gD', function() vim.lsp.buf.declaration() end)
 					vim.keymap.set('n', '<space>gd', function() vim.lsp.buf.definition() end)
