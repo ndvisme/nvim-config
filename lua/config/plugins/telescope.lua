@@ -23,7 +23,7 @@ return {
 		vim.keymap.set('n', '<space>fb', builtin.buffers)
 		vim.keymap.set('n', '<space>fg', builtin.live_grep)
 
-		vim.keymap.set('n', '<leader>ff', function()
+		vim.keymap.set('n', '<leader>fp', function()
 			builtin.find_files({ cwd = vim.fn.expand('%:p:h') })
 		end, { desc = 'Find files in current directory' })
 
