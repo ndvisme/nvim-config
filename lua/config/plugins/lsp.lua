@@ -16,6 +16,12 @@ return {
 		config = function()
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
 			require("lspconfig").lua_ls.setup { capabilites = capabilities }
+			require('lspconfig').gopls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			})
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
