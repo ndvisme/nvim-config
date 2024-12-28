@@ -1,2 +1,2 @@
-[*.{java,lua,py,sh}]
+[*.{java,lua,py,sh,go}]
 indent_size = 2
