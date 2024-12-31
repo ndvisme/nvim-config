@@ -26,4 +26,6 @@ local config = {
     on_attach = on_attach,
 }
 
+vim.opt.shiftwidth = 4 -- to be aligned with the team
+
 require('jdtls').start_or_attach(config)
