@@ -3,6 +3,10 @@ return {
   opts = {
     ensure_installed = {
       "jdtls",
+      "pyright",
+      "black",
+      "ruff",
+      "debugpy",
     },
   },
 }
