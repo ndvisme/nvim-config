@@ -59,6 +59,7 @@ return {
 					end)
 					vim.keymap.set("n", "<space>gd", function()
 						vim.lsp.buf.definition()
+						vim.cmd("normal! zz")
 					end)
 					vim.keymap.set("n", "K", function()
 						vim.lsp.buf.hover()
