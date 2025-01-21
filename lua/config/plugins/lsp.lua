@@ -24,17 +24,23 @@ return {
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
 
-			require("lspconfig").pyright.setup({
-				capabilities = capabilities,
-				settings = {
-					python = {
-						analysis = {
-							typeCheckingMode = "basic",
-							autoSearchPaths = true,
-							useLibraryCodeForTypes = true,
-						},
-					},
-				},
+
+			-- This lsp works together with the pyright lsp
+			require('lspconfig').ruff.setup({
+					capabilities = capabilities,
+					cmd = { "ruff", "server" }
+			})
+			require('lspconfig').pyright.setup({
+					settings = {
+							pyright = {
+									disableOrganizeImports = true
+							},
+							python = {
+									analysis = {
+											ignore = { '*' }
+									}
+							}
+					}
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
