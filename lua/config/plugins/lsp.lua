@@ -56,7 +56,7 @@ return {
 					vim.keymap.set("v", "<space>f", function()
 						require("conform").format({
 							async = false,
-							timeout_ms = 500,
+							timeout_ms = 5000,
 						})
 					end)
 
