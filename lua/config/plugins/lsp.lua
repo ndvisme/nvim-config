@@ -24,23 +24,22 @@ return {
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
 
-
 			-- This lsp works together with the pyright lsp
-			require('lspconfig').ruff.setup({
-					capabilities = capabilities,
-					cmd = { "ruff", "server" }
+			require("lspconfig").ruff.setup({
+				capabilities = capabilities,
+				cmd = { "ruff", "server" },
 			})
-			require('lspconfig').pyright.setup({
-					settings = {
-							pyright = {
-									disableOrganizeImports = true
-							},
-							python = {
-									analysis = {
-											ignore = { '*' }
-									}
-							}
-					}
+			require("lspconfig").pyright.setup({
+				settings = {
+					pyright = {
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							ignore = { "*" },
+						},
+					},
+				},
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -50,13 +49,10 @@ return {
 						return
 					end
 
-					vim.keymap.set("n", "<space>f", function()
-						require("conform").format()
-					end)
-					vim.keymap.set("v", "<space>f", function()
+					vim.keymap.set({ "n", "v" }, "<leader>f", function()
 						require("conform").format({
-							async = false,
-							timeout_ms = 5000,
+							async = true,
+							lsp_fallback = true,
 						})
 					end)
 

@@ -8,6 +8,15 @@ return {
 				python = { "black" },
 				lua = { "stylua" },
 				sql = { "pg_format" },
+				json = { "jq" },
+			},
+			formatters = {
+				jq = {
+					command = "jq",
+					args = function()
+						return { "." }
+					end,
+				},
 			},
 		},
 	},
