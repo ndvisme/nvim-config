@@ -1,4 +1,5 @@
 {
+  "apyrori.nvim": { "branch": "master", "commit": "683616e9910ab045d3fd389b2424369d3d564408" },
   "avante.nvim": { "branch": "main", "commit": "ba9f014b7563760ed217ad665a6f45c051f119d7" },
   "blink.cmp": { "branch": "main", "commit": "1cc3b1a908fbcfd15451c4772759549724f38524" },
   "conform.nvim": { "branch": "master", "commit": "70019124aa4f2e6838be9fbd2007f6d13b27a96d" },
