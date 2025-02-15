@@ -23,12 +23,6 @@ return {
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
-
-			-- This lsp works together with the pyright lsp
-			require("lspconfig").ruff.setup({
-				capabilities = capabilities,
-				cmd = { "ruff", "server" },
-			})
 			require("lspconfig").pyright.setup({
 				settings = {
 					pyright = {

@@ -5,7 +5,6 @@ return {
       "jdtls",
       "pyright",
       "black",
-      "ruff",
       "debugpy",
     },
   },
