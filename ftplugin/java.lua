@@ -31,21 +31,6 @@ local config = {
 	on_attach = on_attach,
 }
 
-vim.opt.shiftwidth = 4 -- to be aligned with the team
+vim.opt.shiftwidth = 2 -- to be aligned with the team
 
 require("jdtls").start_or_attach(config)
-
-require("conform").setup({
-	formatters_by_ft = {
-		lua = { "stylua" },
-		javascript = { "prettierd", "prettier", stop_after_first = true },
-		java = { "google-java-format" },
-		python = { "black" },
-	},
-	formatters = {
-		black = {
-			prepend_args = { "--fast" },
-			timeout = 5000,
-		}
-	}
-})
