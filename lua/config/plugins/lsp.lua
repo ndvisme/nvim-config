@@ -2,7 +2,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"saghen/blink.cmp",
+			"hrsh7th/nvim-cmp", -- Autocompletion plugin
+			"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+			"williamboman/mason.nvim", -- LSP manager
+			"williamboman/mason-lspconfig.nvim", -- Mason integration with lspconfig
 			{
 				"folke/lazydev.nvim",
 				ft = "lua",
@@ -14,16 +17,26 @@ return {
 			},
 		},
 		config = function()
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			require("lspconfig").lua_ls.setup({ capabilites = capabilities })
+			require("mason").setup()
+			require("mason-lspconfig").setup()
 
-			require("lspconfig").gopls.setup({
+			-- Setup Lua language server
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+
+			-- Setup Go language server
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
-			require("lspconfig").pyright.setup({
+
+			-- Setup Python language server
+			lspconfig.pyright.setup({
 				settings = {
 					pyright = {
 						disableOrganizeImports = true,
