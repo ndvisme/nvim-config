@@ -12,6 +12,12 @@ return {
 		opts = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+			cmp.setup({
+				performance = {
+					throttle = 1000,
+					debounce = 1000,
+				},
+			})
 
 			-- Load VSCode-like snippets from friendly-snippets
 			require("luasnip/loaders/from_vscode").lazy_load()
