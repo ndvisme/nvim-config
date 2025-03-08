@@ -1,5 +1,5 @@
 return {
 	{
-		dir = "~/sightd/.config/nvim_plugins/plugins/present.nvim",
+		dir = "~/.config/nvim/nvim_plugins/plugins/present.nvim",
 	},
 }
