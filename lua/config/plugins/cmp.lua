@@ -13,10 +13,14 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			cmp.setup({
-				performance = {},
+				completion = {
+					autocomplete = false,
+				},
+				mapping = cmp.mapping.preset.insert({
+					["[<C-Space>]"] = cmp.mapping.complete(),
+				}),
 			})
 
-			-- Load VSCode-like snippets from friendly-snippets
 			require("luasnip/loaders/from_vscode").lazy_load()
 
 			vim.opt.completeopt = { "menu", "menuone", "noselect" }
