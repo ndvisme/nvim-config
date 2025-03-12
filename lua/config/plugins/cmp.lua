@@ -13,10 +13,7 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			cmp.setup({
-				performance = {
-					throttle = 1000,
-					debounce = 1000,
-				},
+				performance = {},
 			})
 
 			-- Load VSCode-like snippets from friendly-snippets
@@ -30,13 +27,6 @@ return {
 						luasnip.lsp_expand(args.body) -- For expanding snippets
 					end,
 				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
-					["<C-e>"] = cmp.mapping.abort(), -- Close completion menu
-					["<CR>"] = cmp.mapping.confirm({ select = false }), -- Confirm selection
-				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" }, -- LSP source
 					{ name = "luasnip" }, -- Snippet source
