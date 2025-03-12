@@ -21,6 +21,7 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				sh = { "beautysh" },
 			},
 			formatters = {
 				jq = {

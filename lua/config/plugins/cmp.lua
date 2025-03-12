@@ -17,7 +17,7 @@ return {
 					autocomplete = false,
 				},
 				mapping = cmp.mapping.preset.insert({
-					["[<C-Space>]"] = cmp.mapping.complete(),
+					["[<C-p>]"] = cmp.mapping.complete(),
 				}),
 			})
 
