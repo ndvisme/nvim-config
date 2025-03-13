@@ -18,6 +18,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "When I move the page, i like t
 
 vim.keymap.set("n", "<Leader>fj", "<Cmd>%!jq<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_create_user_command('SeeTabsAndSpaces', 'set list', {});
+
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "high light when yanking text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
