@@ -1,15 +1,14 @@
-print("Tips Of The Week: Surrond plugin, Folding scopes")
+print("Tips Of The Week: `git reset HEAD~X`, Folding scopes")
 
 --[[
 - Swap & replace
-- Change inner word?
 - Visual block?
 - Folding scopes
 - Multi line cursors
-- Surrond plugin (change ' to ")
-- viw, cib, ci{, vib
-- Delete till start of line (d0?)
 - Quick fix
+- Git:
+	- git commit --amend (apend current staged changes to last commit)
+	- git reset HEAD~X
 
 - Done:
   - Macros
