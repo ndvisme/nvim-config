@@ -13,6 +13,7 @@ return {
 			"prettier",
 			"stylelua",
 			"lua_ls",
+			"vtsls",
 		},
 	},
 }

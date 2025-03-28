@@ -15,6 +15,7 @@ return {
 					},
 				},
 			},
+			"yioneko/nvim-vtsls",
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
@@ -45,6 +46,26 @@ return {
 						analysis = {
 							ignore = { "*" },
 						},
+					},
+				},
+			})
+
+			-- Setup TypeScript/JavaScript language server using vtsls
+			require("lspconfig.configs").vtsls = require("vtsls").lspconfig
+			lspconfig.vtsls.setup({
+				capabilities = capabilities,
+				filetypes = {
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+				},
+				settings = {
+					vtsls = {
+						autoUseWorkspaceTsdk = true, -- Automatically use workspace TypeScript version
+						enableMoveToFileCodeAction = true, -- Enable refactoring options like moving code to another file
 					},
 				},
 			})
