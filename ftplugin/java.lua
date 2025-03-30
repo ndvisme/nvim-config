@@ -1,11 +1,9 @@
 local on_attach = require("config.on_attach")
 
--- Define lombok path
 local lombok_path = vim.fn.expand("$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar")
 if vim.fn.filereadable(lombok_path) == 0 then
   vim.notify("Lombok not found at: " .. lombok_path, vim.log.levels.ERROR)
 end
--- lombok_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls/lombok.jar"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.expand("~/.cache/jdtls-workspace/") .. project_name
 
