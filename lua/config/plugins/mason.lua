@@ -14,6 +14,7 @@ return {
 			"stylelua",
 			"lua_ls",
 			"vtsls",
+			"bash-language-server",
 		},
 	},
 }
