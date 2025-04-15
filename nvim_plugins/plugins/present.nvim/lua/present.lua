@@ -6,6 +6,7 @@ print("Tips Of The Week: `git reset HEAD~X`, Folding scopes")
 - Folding scopes
 - Multi line cursors
 - Quick fix
+- Go to matching parenthashis & more? '%'
 - Git:
 	- git commit --amend (apend current staged changes to last commit)
 	- git reset HEAD~X
